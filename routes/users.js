@@ -80,14 +80,22 @@ router.post('/register', (req, res) => {
   }
 });
 
+
 // Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
     failureRedirect: '/users/login',
     failureFlash: true
-  })(req, res, next);
+  })(req, res, function() {
+    // Check user type
+    if (req.user.userType === 'student') {
+      res.redirect('/dashboard-student');
+    } else {
+      res.redirect('/dashboard');
+    }
+  });
 });
+
 
 // Logout
 router.get('/logout', (req, res) => {

@@ -14,7 +14,7 @@ require('./controller/passport')(passport);
 const db = require('./controller/keys').mongoURI;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://rjankee:HFRdOgBrCwiFc6Rl@cluster0.usfcgcs.mongodb.net/MentorTestAPI?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://rjankee2:WPDcoursework2@cluster0.usfcgcs.mongodb.net/MentorTestAPI?retryWrites=true&w=majority')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
@@ -53,6 +53,11 @@ app.use(function (req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
+// Add Opportunity route
+app.get('/views/addopportunity', (req, res) => {
+  res.render('addopportunity'); // Assuming 'addopportunity' is the correct EJS file name
+});
+
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server running on  ${PORT}`));
+app.listen(PORT, console.log(`Server running on ${PORT}`));

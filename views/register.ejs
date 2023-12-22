@@ -1,16 +1,121 @@
-<style>
-  .register-button {
-    background-color: #ADD8E6; /* Light blue */
-    border-color: #ADD8E6;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/your/font-awesome/css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
-  .register-button:hover {
-    background-color: #007BFF; /* Darker blue on hover */
-    border-color: #007BFF;
-  }
-</style>
+    .register-button {
+      background-color: #ADD8E6;
+      /* Light blue */
+      border-color: #ADD8E6;
+    }
 
-<div class="row mt-5">
+    .register-button:hover {
+      background-color: #007BFF;
+      /* Darker blue on hover */
+      border-color: #007BFF;
+    }
+
+          /* Footer styles */
+    footer {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+  
+  button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        /* Darker blue on hover */
+    }
+
+    #nav-logo {
+    width: 50px; /* Adjust this value to change the size of the logo */
+    height: auto; /* This will maintain the aspect ratio of the logo */
+    margin-right: 10px;
+}
+
+.navbar li {
+    font-size: 14px; /* Adjust this value to change the size of the text in the li elements */
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 200px; /* Adjust this value to change the size of the logo */
+    text-align: center;
+  }
+
+
+  .container {
+    margin-top: -80px;
+  }
+  
+
+  </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="logo-and-brand" style="display: flex; align-items: center;">
+          <img id="nav-logo" src="https://www.mentor360.com/wp-content/themes/mentor/dist/images/mentor_roundal.png">
+          <a class="navbar-brand" href="#" style="font-weight: bolder; color: white; font-size:x-large;">Mentor360</a>
+          </div>
+        <!--About Us button-->
+            <button onclick="aboutus()" style="background-color: white; 
+            color: #007BFF;
+            font-weight: bold;"
+      onmouseover="this.style.backgroundColor='#0056b3'; this.style.color='#fff';"
+      onmouseout="this.style.backgroundColor='white'; this.style.color='#007BFF';">
+      About Us
+      </button>
+      
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <img class="logo" src="https://www.mentor360.com/wp-content/themes/mentor/dist/images/mentor_roundal.png">
+
+  <div class="row mt-5">
     <div class="col-md-6 m-auto">
       <div class="card card-body">
         <h1 class="text-center mb-3">
@@ -52,8 +157,8 @@
               required // This makes the field mandatory
               value="<%= typeof studentID != 'undefined' ? studentID : '' %>"
             />
-        </div>
-        
+          </div>
+
           <div class="form-group">
             <label for="password">Password</label>
             <input
@@ -84,3 +189,23 @@
       </div>
     </div>
   </div>
+
+    </div>
+
+  <footer>
+    <p>Contact us at: r.jankee@alustendent.com</p>
+    <p>&copy; 2023 Mentor360. All rights reserved.</p>
+  </footer>
+
+</body>
+
+
+<script>
+  //redirect to About Us
+  function aboutus() {
+  window.location.href = '/views/aboutUs-nobackbtn';
+}
+</script>
+
+
+</html>
